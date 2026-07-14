@@ -1,0 +1,13 @@
+# Force Unix (LF) line endings on shell scripts regardless of the OS the repo
+# is cloned or edited on. Windows editors otherwise tend to introduce CRLF,
+# which breaks bash with errors like `$'\r': command not found`.
+*.sh text eol=lf
+
+# Normalize text files to LF in the repository.
+*.md   text eol=lf
+LICENSE text eol=lf
+.gitattributes text eol=lf
+
+# Treat disk images / overlays as binary if any ever land here (they shouldn't
+# be committed, but this prevents accidental line-ending mangling).
+*.img binary
